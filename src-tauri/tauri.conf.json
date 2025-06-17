@@ -1,59 +1,35 @@
 {
-  "$schema": "https://schema.tauri.app/v2/config.json",
-  "package": {
-    "productName": "timelink",
-    "version": "0.1.0"
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "timelink",
+  "version": "0.1.0",
+  "identifier": "com.timelink.app",
+  "build": {
+    "beforeDevCommand": "bun run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "bun run build",
+    "frontendDist": "../dist"
   },
-  "tauri": {
-    "identifier": "com.timelink.app",
-    "build": {
-      "beforeDevCommand": "bun run dev",
-      "beforeBuildCommand": "bun run build",
-      "devPath": "http://localhost:1420",
-      "distDir": "../dist"
-    },
+  "app": {
     "windows": [
       {
-        "label": "main",
         "title": "timelink",
         "width": 800,
-        "height": 600,
-        "visible": false
-      },
-      {
-        "label": "updater",
-        "title": "Checking for Updates...",
-        "width": 400,
-        "height": 200,
-        "resizable": false,
-        "center": true,
-        "decorations": false,
-        "alwaysOnTop": true,
-        "skipTaskbar": true,
-        "visible": false
+        "height": 600
       }
     ],
     "security": {
       "csp": null
-    },
-    "updater": {
-      "active": true,
-      "dialog": false,
-      "endpoints": [
-        "https://github.com/<GITHUB_OWNER>/<REPO_NAME>/releases/latest/download/latest.json"
-      ],
-      "pubkey": "YOUR_PUBLIC_KEY_HERE"
-    },
-    "bundle": {
-      "active": true,
-      "targets": ["deb", "appimage", "msi", "dmg"],
-      "icon": [
-        "icons/32x32.png",
-        "icons/128x128.png",
-        "icons/128x128@2x.png",
-        "icons/icon.icns",
-        "icons/icon.ico"
-      ]
     }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ]
   }
 }
