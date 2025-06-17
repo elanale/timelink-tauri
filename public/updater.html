@@ -1,0 +1,94 @@
+<!-- public/updater.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Timelink Updater</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #1e1e1e;
+      color: #ffffff;
+    }
+    #status {
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+    #progress-container {
+      width: 100%;
+      max-width: 360px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    progress {
+      width: 100%;
+      height: 12px;
+      appearance: none;
+      -webkit-appearance: none;
+      background-color: #333;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    progress::-webkit-progress-bar {
+      background-color: #333;
+    }
+    progress::-webkit-progress-value {
+      background-color: #4caf50;
+    }
+    #percent {
+      min-width: 40px;
+      text-align: right;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div id="status">Preparing to update…</div>
+  <div id="progress-container">
+    <progress id="progress" value="0" max="1"></progress>
+    <span id="percent">0%</span>
+  </div>
+
+  <script type="module">
+    import { event, installUpdate } from "@tauri-apps/api/updater";
+
+    const statusEl = document.getElementById("status");
+    const progressEl = document.getElementById("progress");
+    const percentEl = document.getElementById("percent");
+
+    // When an update is available (and the download starts)…
+    event.listen("tauri://update-available", () => {
+      statusEl.textContent = "Update found. Downloading…";
+    });
+
+    // Download progress events give e.payload = fraction [0..1]
+    event.listen("tauri://update-download-progress", (e) => {
+      const f = e.payload;
+      progressEl.value = f;
+      percentEl.textContent = Math.floor(f * 100) + "%";
+    });
+
+    // Once downloaded, we install it
+    event.listen("tauri://update-downloaded", async () => {
+      statusEl.textContent = "Downloaded! Restarting…";
+      // Small delay so user sees 100% before restart
+      await new Promise((r) => setTimeout(r, 800));
+      await installUpdate();
+    });
+
+    // Handle any error
+    event.listen("tauri://update-error", (e) => {
+      statusEl.textContent = "Update failed: " + e.payload;
+      statusEl.style.color = "#e53935"; // red
+    });
+  </script>
+</body>
+</html>
