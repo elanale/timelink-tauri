@@ -1,6 +1,6 @@
 # TimeLink
 
-[![STD Covenant](https://img.shields.io/badge/STD_COVENANT-Codex-green?style=flat&logo=github)](CODEX.md)
+[![STD Covenant](https://img.shields.io/badge/STD_COVENANT-Codex-green?style=flat&logo=github)](https://github.com/janustack/.github/blob/main/CODEX.md)
 
 ## Tech Stack
 
