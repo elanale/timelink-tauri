@@ -16,10 +16,29 @@ Below is the core technology stack used in TimeLink, along with links to their d
 
 ## Prerequisites
 
-Ensure the following is installed:
+Before getting started, make sure you have the following tools installed:
 
 - [Bun](https://bun.sh/docs/installation)
 - [Rust](https://www.rust-lang.org/tools/install)
+
+## Recommended VS Code Extensions
+
+These extensions enhance development specifically for this stack:
+
+- [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+- [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
+- [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode)
+- [Biome](https://marketplace.visualstudio.com/items?itemName=biomejs.biome)
+- [Bun for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=oven.bun-vscode)
+- [Even Better TOML](https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml)
+
+### General-Purpose VS Code Extensions
+
+- [Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag)
+- [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
+- [colorize](https://marketplace.visualstudio.com/items?itemName=kamikillerto.vscode-colorize)
+- [vscode-icons](https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons)
+
 
 ## Common CLI Commands
 
