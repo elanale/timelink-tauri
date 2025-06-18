@@ -1,7 +1,8 @@
 {
 	"name": "timelink",
-	"private": true,
-	"version": "0.1.0",
+	"description": "Employment management system.",
+	"author": "Elan Wygodski",
+	"private": false,
 	"type": "module",
 	"scripts": {
 		"dev": "vite",

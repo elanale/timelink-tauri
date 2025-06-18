@@ -4,7 +4,7 @@ export default function NavBar() {
 	return (
 		<nav className="flex items-center">
 			<Link to="/">TimeLink</Link>
-            <Link to="/dashboard">Dashboard</Link>
+			<Link to="/dashboard">Dashboard</Link>
 		</nav>
 	);
 }

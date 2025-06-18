@@ -42,7 +42,13 @@ These extensions enhance development specifically for this stack:
 ## Common CLI Commands
 
 ```bash
-# Start the Vite-powered React frontend in your browser:
+# To install dependencies of the application
+bun install
+
+# To update dependencies to their latest version
+bun update --latest
+
+# Start the Vite-powered React frontend in your browser
 bun run dev
 
 # Format your code

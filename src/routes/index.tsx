@@ -45,7 +45,7 @@ function App() {
 				</label>
 
 				<input
-					className="border border-gray-300 rounded-lg p-2 mr-2"
+					className="border border-gray-300 rounded-lg p-2 mr-8 bg-red-600 text-4xl"
 					type="text"
 					id="greet-input"
 					onChange={(e) => setName(e.currentTarget.value)}

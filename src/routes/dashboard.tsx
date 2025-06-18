@@ -1,7 +1,7 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute } from "@tanstack/react-router";
 
-export const Route = createFileRoute('/dashboard')({
-  component: Dashboard,
+export const Route = createFileRoute("/dashboard")({
+	component: Dashboard,
 	head: () => ({
 		meta: [
 			{
@@ -13,15 +13,15 @@ export const Route = createFileRoute('/dashboard')({
 			},
 		],
 	}),
-})
+});
 
 function Dashboard() {
-  return (
-    <div>
-        <header>
-            <h1>Dashboard</h1>
-            <p>Welcome to the TimeLink Dashboard!</p>
-        </header>
-    </div>
-  )
+	return (
+		<div>
+			<header>
+				<h1>Dashboard</h1>
+				<p>Welcome to the TimeLink Dashboard!</p>
+			</header>
+		</div>
+	);
 }
