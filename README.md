@@ -39,7 +39,6 @@ These extensions enhance development specifically for this stack:
 - [colorize](https://marketplace.visualstudio.com/items?itemName=kamikillerto.vscode-colorize)
 - [vscode-icons](https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons)
 
-
 ## Common CLI Commands
 
 ```bash
@@ -58,4 +57,3 @@ bun run tauri build
 # Run the app in development mode
 bun run tauri dev
 ```
-
