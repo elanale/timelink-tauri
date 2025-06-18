@@ -29,24 +29,32 @@ function App() {
 
 	return (
 		<main>
-			<h1>Welcome to TimeLink</h1>
-
-			<p>Click on the Tauri, Vite, and React logos to learn more.</p>
+			<header>
+				<h1>TimeLink</h1>
+				<p>Welcome to TimeLink!</p>
+			</header>
 
 			<form
-				className="row"
 				onSubmit={(e) => {
 					e.preventDefault();
 					greet();
 				}}
 			>
+				<label className="block" htmlFor="greet-input">
+					Enter your name
+				</label>
+
 				<input
+					className="border border-gray-300 rounded-lg p-2 mr-2"
+					type="text"
 					id="greet-input"
 					onChange={(e) => setName(e.currentTarget.value)}
-					placeholder="Enter a name..."
+					placeholder="E.g. Elan Wygodski"
 				/>
 
-				<button type="submit">Greet</button>
+				<button className="bg-blue-500 rounded-lg p-2 text-white" type="submit">
+					Greet
+				</button>
 			</form>
 			<p>{greetMsg}</p>
 		</main>

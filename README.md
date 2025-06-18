@@ -1,6 +1,6 @@
 # TimeLink
 
-[![STD Covenant](https://img.shields.io/badge/STD_COVENANT-Codex-green?style=flat&logo=github)](CODEX.md)
+[![STD Covenant](https://img.shields.io/badge/STD_COVENANT-Codex-green?style=flat&logo=github)](https://github.com/janustack/.github/blob/main/CODEX.md)
 
 ## Tech Stack
 
@@ -24,16 +24,19 @@ Ensure the following is installed:
 ## Common CLI Commands
 
 ```bash
+# Start the Vite-powered React frontend in your browser:
+bun run dev
+
 # Format your code
 bun run format
-
-# Run the app in development mode
-bun run tauri dev
 
 # Open the Tauri CLI
 bun run tauri
 
 # Build the app in release mode
 bun run tauri build
+
+# Run the app in development mode
+bun run tauri dev
 ```
 
