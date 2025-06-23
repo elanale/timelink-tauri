@@ -1,8 +1,8 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { useEffect, useState } from "react";
-import { useAuth } from "@/components/AuthContext";
-import { auth } from "@/components/firebase";
+import { useAuth } from "@timelink/shared/context/AuthContext";
+import { auth } from "@timelink/shared/firebase.ts";
 
 export const Route = createFileRoute("/login")({
   component: LoginPage,

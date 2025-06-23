@@ -1,8 +1,7 @@
-// src/components/AuthContext.tsx
 import type { User } from "firebase/auth";
 import { onAuthStateChanged } from "firebase/auth";
 import { createContext, useContext, useEffect, useState } from "react";
-import { auth } from "./firebase";
+import { auth } from "../firebase.ts";
 
 interface AuthState {
   user: User | null;
@@ -16,7 +15,7 @@ const AuthContext = createContext<AuthState>({
   emailVerified: false,
 });
 
-export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
+const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
   const [emailVerified, setEmailVerified] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -42,5 +41,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     </AuthContext.Provider>
   );
 };
+
+export default AuthProvider;
 
 export const useAuth = () => useContext(AuthContext);

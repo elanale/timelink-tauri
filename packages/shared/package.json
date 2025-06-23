@@ -1,0 +1,7 @@
+{
+    "name": "@timelink/shared",
+    "description": "Shared code for Timelink",
+    "author": "",
+    "version": "0.1.0",
+    "type": "module"
+}

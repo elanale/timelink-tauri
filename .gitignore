@@ -12,10 +12,6 @@ coverage
 # Dependencies (bun install)
 node_modules
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-
 # Finder (MacOS) folder config
 .DS_Store
 

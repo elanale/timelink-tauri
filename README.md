@@ -1,12 +1,13 @@
 # TimeLink
 
-[![STD Covenant](https://img.shields.io/badge/STD_COVENANT-Codex-green?style=flat&logo=github)](https://github.com/janustack/.github/blob/main/CODEX.md)
+[![Normadex](https://img.shields.io/badge/Normadex-Codex-green?style=flat&logo=github)](https://github.com/janustack/.github/blob/main/CODEX.md)
 
 ## Tech Stack
 
 Below is the core technology stack used in TimeLink, along with links to their documentation:
 
 - [Bun](https://bun.sh/docs) - Fast JavaScript runtime and package manager
+- [Moon](https://moonrepo.dev/docs/install) - Monorepo management, organization, orchestration, and notification tool for the web ecosystem
 - [React](https://react.dev/) - UI library
 - [Tailwind CSS](https://tailwindcss.com/docs/installation/using-vite) - CSS Framework
 - [Tanstack Router](https://tanstack.com/router/latest/docs/framework/react/overview)
@@ -19,6 +20,7 @@ Below is the core technology stack used in TimeLink, along with links to their d
 Before getting started, make sure you have the following tools installed:
 
 - [Bun](https://bun.sh/docs/installation)
+- [Moon](https://moonrepo.dev/docs/install)
 - [Rust](https://www.rust-lang.org/tools/install)
 
 ## Recommended VS Code Extensions
@@ -39,7 +41,11 @@ These extensions enhance development specifically for this stack:
 - [colorize](https://marketplace.visualstudio.com/items?itemName=kamikillerto.vscode-colorize)
 - [vscode-icons](https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons)
 
-## Common CLI Commands
+### Common CLI Commands
+
+Desktop and web app commands can be executed from any directory within the monorepo.
+
+#### General
 
 ```bash
 # To install dependencies of the application
@@ -48,18 +54,29 @@ bun install
 # To update dependencies to their latest version
 bun update --latest
 
-# Start the Vite-powered React frontend in your browser
-bun run dev
-
 # Format your code
 bun run format
+```
 
-# Open the Tauri CLI
-bun run tauri
+#### Desktop App (Tauri)
+
+```bash
+# Start the Vite-powered React frontend in your browser
+bun run dev desktop:moon
 
 # Build the app in release mode
-bun run tauri build
+bun run tauri build desktop:moon
 
 # Run the app in development mode
-bun run tauri dev
+bun run tauri dev desktop:moon
+```
+
+#### Web App
+
+```bash
+# Start the Vite-powered React frontend in your browser
+bun run dev web:moon
+
+# Build the app
+bun run build web:moon
 ```

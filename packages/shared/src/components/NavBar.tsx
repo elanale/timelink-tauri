@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "@tanstack/react-router"; // ✅ Added useNavigate
 import { signOut } from "firebase/auth";
-import { useAuth } from "@/components/AuthContext";
-import { auth } from "@/components/firebase";
+import { useAuth } from "../context/AuthContext";
+import { auth } from "../firebase.ts";
 
 export default function NavBar() {
   const { user } = useAuth();
@@ -52,6 +52,7 @@ export default function NavBar() {
           {user && (
             <li>
               <button
+                type="button"
                 onClick={handleLogout}
                 className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded text-sm"
               >

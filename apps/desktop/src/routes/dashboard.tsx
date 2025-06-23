@@ -1,7 +1,7 @@
 // src/routes/dashboard.tsx
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useEffect } from "react";
-import { useAuth } from "@/components/AuthContext";
+import { useAuth } from "@timelink/shared/context/AuthContext";
 import EmploymentClock from "./Clock";
 
 export const Route = createFileRoute("/dashboard")({

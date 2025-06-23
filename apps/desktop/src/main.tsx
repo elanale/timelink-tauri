@@ -1,7 +1,7 @@
 import { createRouter, RouterProvider } from "@tanstack/react-router";
 import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
-import { AuthProvider } from "@/components/AuthContext";
+import AuthProvider from "@timelink/shared/context/AuthContext.tsx";
 import { routeTree } from "./routeTree.gen.ts";
 
 import "./index.css";

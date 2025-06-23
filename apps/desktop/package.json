@@ -1,0 +1,32 @@
+{
+	"name": "timelink-desktop",
+	"description": "Employment management system.",
+	"author": "Elan Wygodski",
+	"private": false,
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc && vite build",
+		"preview": "vite preview",
+		"tauri": "tauri"
+	},
+	"dependencies": {
+		"@tailwindcss/vite": "catalog:plugins",
+		"@tanstack/react-router": "catalog:",
+		"@tauri-apps/api": "^2.5.0",
+		"@tauri-apps/plugin-opener": "^2.3.0",
+		"@timelink/shared": "catalog:ui",
+		"firebase": "^11.9.1",
+		"react": "catalog:",
+		"react-dom": "catalog:",
+		"tailwindcss": "catalog:ui"
+	},
+	"devDependencies": {
+		"@tanstack/router-plugin": "catalog:plugins",
+		"@tauri-apps/cli": "^2.5.0",
+		"@types/react": "catalog:types",
+		"@types/react-dom": "catalog:types",
+		"@vitejs/plugin-react": "catalog:plugins",
+		"vite": "catalog:build"
+	}
+}

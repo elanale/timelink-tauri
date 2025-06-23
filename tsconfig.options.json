@@ -1,0 +1,13 @@
+{
+	"extends": "@janfig/tsconfig/react",
+	"compilerOptions": {
+		"types": ["vite/client"],
+
+		// Path aliases
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["src/*"],
+			"@timelink/shared/*": ["packages/shared/src/*"]
+		}
+	}
+}

@@ -1,0 +1,5 @@
+language: typescript
+type: application
+
+project:
+  name: "desktop"

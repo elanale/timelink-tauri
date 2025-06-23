@@ -1,7 +1,7 @@
 import { resolve } from "node:path";
 
 import tailwindCSS from "@tailwindcss/vite";
-import { TanStackRouterVite } from "@tanstack/router-plugin/vite";
+import { tanstackRouter } from "@tanstack/router-plugin/vite";
 import react from "@vitejs/plugin-react";
 
 import { defineConfig } from "vite";
@@ -12,7 +12,7 @@ const host = process.env.TAURI_DEV_HOST;
 // https://vitejs.dev/config/
 export default defineConfig(async () => ({
 	plugins: [
-		TanStackRouterVite({ target: "react", autoCodeSplitting: true }),
+		tanstackRouter({ target: "react", autoCodeSplitting: true }),
 		react(),
 		tailwindCSS(),
 	],
@@ -24,6 +24,7 @@ export default defineConfig(async () => ({
 	resolve: {
 		alias: {
 			"@": resolve(__dirname, "./src"),
+			"@timelink/shared": resolve(__dirname, "../../packages/shared/src"),
 		},
 	},
 	// 2. tauri expects a fixed port, fail if that port is not available
@@ -33,10 +34,10 @@ export default defineConfig(async () => ({
 		host: host || false,
 		hmr: host
 			? {
-					protocol: "ws",
-					host,
-					port: 1421,
-				}
+				protocol: "ws",
+				host,
+				port: 1421,
+			}
 			: undefined,
 		watch: {
 			// 3. tell vite to ignore watching `src-tauri`

@@ -7,8 +7,8 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import { useAuth } from "@/components/AuthContext";
-import { db } from "@/components/firebase";
+import { useAuth } from "@timelink/shared/context/AuthContext.tsx";
+import { db } from "@timelink/shared/firebase.ts";
 
 export default function EmploymentClock() {
   const { user } = useAuth();
@@ -108,15 +108,15 @@ export default function EmploymentClock() {
             status === "in"
               ? "text-green-500"
               : status === "out"
-              ? "text-red-500"
-              : "text-blue-500"
+                ? "text-red-500"
+                : "text-blue-500"
           }
         >
           {status === "idle"
             ? "Not clocked in"
             : status === "in"
-            ? "Clocked In"
-            : "Clocked Out"}
+              ? "Clocked In"
+              : "Clocked Out"}
         </span>
       </p>
 
@@ -124,12 +124,15 @@ export default function EmploymentClock() {
         <button
           onClick={handleClockIn}
           className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded"
+          type="button"
         >
           Clock In
         </button>
         <button
           onClick={handleClockOut}
           className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded"
+          type="button"
+
         >
           Clock Out
         </button>

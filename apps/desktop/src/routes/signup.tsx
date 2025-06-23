@@ -6,8 +6,8 @@ import {
 } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import { useAuth } from "@/components/AuthContext";
-import { auth, db } from "@/components/firebase";
+import { useAuth } from "@timelink/shared/context/AuthContext.tsx";
+import { auth, db } from "@timelink/shared/firebase.ts";
 
 export const Route = createFileRoute("/signup")({
   component: SignupPage,
