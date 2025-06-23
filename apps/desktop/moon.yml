@@ -1,5 +1,8 @@
 language: typescript
 type: application
 
-project:
-  name: "desktop"
+tasks:
+  build:
+    command: 'tauri dev'
+  dev:
+    command: 'tauri build'

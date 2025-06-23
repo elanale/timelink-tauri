@@ -1,5 +1,5 @@
 import { createRootRoute, HeadContent, Outlet } from "@tanstack/react-router";
-import { Footer, NavBar } from "@timelink/shared/components";
+import { Footer, NavBar } from "@ui/components";
 
 export const Route = createRootRoute({
 	component: Root,

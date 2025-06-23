@@ -23,8 +23,8 @@ export default defineConfig(async () => ({
 	clearScreen: false,
 	resolve: {
 		alias: {
-			"@": resolve(__dirname, "./src"),
-			"@timelink/shared": resolve(__dirname, "../../packages/shared/src"),
+			"@ui": resolve(__dirname, "../../packages/ui/src"),
+			"@utils": resolve(__dirname, "../../packages/utils/src"),
 		},
 	},
 	// 2. tauri expects a fixed port, fail if that port is not available

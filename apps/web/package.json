@@ -4,24 +4,17 @@
 	"author": "Elan Wygodski",
 	"private": false,
 	"type": "module",
-	"scripts": {
-		"dev": "vite",
-		"build": "vite build",
-		"preview": "vite preview"
-	},
 	"dependencies": {
 		"@tailwindcss/vite": "catalog:plugins",
 		"@tanstack/react-router": "catalog:",
-		"@timelink/shared": "catalog:ui",
-		"firebase": "^11.9.1",
+		"@timelink/ui": "catalog:ui",
+		"@timelink/utils": "catalog:",
 		"react": "catalog:",
 		"react-dom": "catalog:",
 		"tailwindcss": "catalog:ui"
 	},
 	"devDependencies": {
 		"@tanstack/router-plugin": "catalog:plugins",
-		"@types/react": "catalog:types",
-		"@types/react-dom": "catalog:types",
 		"@vitejs/plugin-react": "catalog:plugins",
 		"vite": "catalog:build"
 	}

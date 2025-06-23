@@ -7,10 +7,10 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import { useAuth } from "@timelink/shared/context/AuthContext.tsx";
-import { db } from "@timelink/shared/firebase.ts";
+import { useAuth } from "@ui/context/AuthContext.tsx";
+import { db } from "@utils/services/firebase.ts";
 
-export default function EmploymentClock() {
+export default function Clock() {
   const { user } = useAuth();
   const [clockInTime, setClockInTime] = useState<string | null>(null);
   const [clockOutTime, setClockOutTime] = useState<string | null>(null);

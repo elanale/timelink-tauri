@@ -1,10 +1,10 @@
 import { createRouter, RouterProvider } from "@tanstack/react-router";
 import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
-import AuthProvider from "@timelink/shared/context/AuthContext.tsx";
+import AuthProvider from "@ui/context/AuthContext.tsx";
 import { routeTree } from "./routeTree.gen.ts";
 
-import "./index.css";
+import "@ui/styles.css";
 
 // Create the router
 const router = createRouter({
@@ -23,7 +23,6 @@ declare module "@tanstack/react-router" {
   }
 }
 
-// Render the app (✅ ONLY ONCE)
 const rootElement = document.getElementById("app");
 if (rootElement) {
   const root = ReactDOM.createRoot(rootElement);

@@ -1,5 +1,10 @@
 language: typescript
 type: application
 
-project:
-  name: "web"
+tasks:
+  build:
+    command: 'vite build'
+  dev:
+    command: 'vite'
+  preview:
+    command: 'vite preview'

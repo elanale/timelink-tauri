@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "@tanstack/react-router"; // ✅ Added useNavigate
 import { signOut } from "firebase/auth";
-import { useAuth } from "../context/AuthContext";
-import { auth } from "../firebase.ts";
+import { useAuth } from "../context/AuthContext.tsx";
+import { auth } from "../../../utils/src/services/firebase.ts";
 
 export default function NavBar() {
   const { user } = useAuth();

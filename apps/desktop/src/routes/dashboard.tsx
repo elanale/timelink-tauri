@@ -1,8 +1,8 @@
 // src/routes/dashboard.tsx
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useEffect } from "react";
-import { useAuth } from "@timelink/shared/context/AuthContext";
-import EmploymentClock from "./Clock";
+import { useAuth } from "@ui/context/AuthContext";
+import Clock from "@ui/components/Clock.tsx";
 
 export const Route = createFileRoute("/dashboard")({
   component: Dashboard,
@@ -14,7 +14,7 @@ export const Route = createFileRoute("/dashboard")({
   }),
 });
 
-export default function Dashboard() {
+function Dashboard() {
   const { user, loading, emailVerified } = useAuth();
   const navigate = useNavigate();
 
@@ -60,7 +60,7 @@ export default function Dashboard() {
           This is your personalized dashboard. Use the clock below to track your work time.
         </p>
 
-        <EmploymentClock />
+        <Clock />
       </div>
     </main>
   );

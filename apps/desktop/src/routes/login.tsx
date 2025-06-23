@@ -1,14 +1,25 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { useEffect, useState } from "react";
-import { useAuth } from "@timelink/shared/context/AuthContext";
-import { auth } from "@timelink/shared/firebase.ts";
+import { useAuth } from "@ui/context/AuthContext";
+import { auth } from "@utils/services/firebase.ts";
 
 export const Route = createFileRoute("/login")({
-  component: LoginPage,
+  component: Login,
+	head: () => ({
+		meta: [
+			{
+				title: "Login - Timelink",
+			},
+			{
+				name: "description",
+				content: "Log in to your Timelink account.",
+			},
+		],
+	}),
 });
 
-function LoginPage() {
+function Login() {
   const navigate = useNavigate();
   const { user, loading } = useAuth();
   const [email, setEmail] = useState("");

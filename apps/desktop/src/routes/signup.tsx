@@ -6,14 +6,25 @@ import {
 } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import { useAuth } from "@timelink/shared/context/AuthContext.tsx";
-import { auth, db } from "@timelink/shared/firebase.ts";
+import { useAuth } from "@ui/context/AuthContext.tsx";
+import { auth, db } from "@utils/services/firebase.ts";
 
 export const Route = createFileRoute("/signup")({
-  component: SignupPage,
+  component: Signup,
+	head: () => ({
+		meta: [
+			{
+				title: "Signup - Timelink",
+			},
+			{
+				name: "description",
+				content: "Create a new account on Timelink.",
+			},
+		],
+	}),
 });
 
-function SignupPage() {
+function Signup() {
   const navigate = useNavigate();
   const { user, loading } = useAuth();
   const [email, setEmail] = useState("");

@@ -43,7 +43,7 @@ These extensions enhance development specifically for this stack:
 
 ### Common CLI Commands
 
-Desktop and web app commands can be executed from any directory within the monorepo.
+Any command ran with moon can be executed from any directory within the monorepo.
 
 #### General
 
@@ -58,25 +58,22 @@ bun update --latest
 bun run format
 ```
 
-#### Desktop App (Tauri)
+#### Desktop App
 
 ```bash
-# Start the Vite-powered React frontend in your browser
-bun run dev desktop:moon
-
 # Build the app in release mode
-bun run tauri build desktop:moon
+moon desktop:build
 
 # Run the app in development mode
-bun run tauri dev desktop:moon
+moon desktop:dev
 ```
 
 #### Web App
 
 ```bash
 # Start the Vite-powered React frontend in your browser
-bun run dev web:moon
+moon web:dev
 
 # Build the app
-bun run build web:moon
+moon web:build
 ```

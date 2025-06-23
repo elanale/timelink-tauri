@@ -28,7 +28,7 @@ function App() {
       >
         Go to Login
       </button>
-    
+
     </main>
   );
 }
