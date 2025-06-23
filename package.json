@@ -18,6 +18,7 @@
 		"@tanstack/react-router": "^1.121.21",
 		"@tauri-apps/api": "^2.5.0",
 		"@tauri-apps/plugin-opener": "^2.3.0",
+		"firebase": "^11.9.1",
 		"react": "^19.1.0",
 		"react-dom": "^19.1.0",
 		"tailwindcss": "^4.1.10"

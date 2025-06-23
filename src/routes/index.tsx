@@ -1,62 +1,45 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { invoke } from "@tauri-apps/api/core";
-
 import { useState } from "react";
 
+
+
+
+
+
 export const Route = createFileRoute("/")({
-	component: App,
-	head: () => ({
-		meta: [
-			{
-				title: "TimeLink",
-			},
-			{
-				name: "description",
-				content: "Welcome to TimeLink.",
-			},
-		],
-	}),
+  component: App,
+  head: () => ({
+    meta: [
+      { title: "TimeLink" },
+      { name: "description", content: "Welcome to TimeLink." },
+    ],
+  }),
 });
 
 function App() {
-	const [greetMsg, setGreetMsg] = useState("");
-	const [name, setName] = useState("");
+  const navigate = useNavigate();
+  const [greetMsg, setGreetMsg] = useState("");
+  const [name, setName] = useState("");
 
-	async function greet() {
-		// Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
-		setGreetMsg(await invoke("greet", { name }));
-	}
+  async function greet() {
+    setGreetMsg(await invoke("greet", { name }));
+  }
 
-	return (
-		<main>
-			<header>
-				<h1>TimeLink</h1>
-				<p>Welcome to TimeLink!</p>
-			</header>
+  return (
+    <main className="min-h-screen bg-gray-100 dark:bg-gray-900 flex flex-col items-center justify-center text-center px-4 space-y-8">
+      <h1 className="text-4xl font-bold text-gray-800 dark:text-white">Welcome to TimeLink</h1>
+      <p className="text-lg text-gray-600 dark:text-gray-300 max-w-md">
+        Your time-tracking tool built with Tauri.
+      </p>
 
-			<form
-				onSubmit={(e) => {
-					e.preventDefault();
-					greet();
-				}}
-			>
-				<label className="block" htmlFor="greet-input">
-					Enter your name
-				</label>
-
-				<input
-					className="border border-gray-300 rounded-lg p-2 mr-8 bg-red-600 text-4xl"
-					type="text"
-					id="greet-input"
-					onChange={(e) => setName(e.currentTarget.value)}
-					placeholder="E.g. Elan Wygodski"
-				/>
-
-				<button className="bg-blue-500 rounded-lg p-2 text-white" type="submit">
-					Greet
-				</button>
-			</form>
-			<p>{greetMsg}</p>
-		</main>
-	);
+      <button
+        onClick={() => navigate({ to: "/login" })}
+        className="bg-blue-600 hover:bg-blue-700 text-white text-xl font-semibold px-8 py-4 rounded-lg transition"
+      >
+        Go to Login
+      </button>
+    
+    </main>
+  );
 }

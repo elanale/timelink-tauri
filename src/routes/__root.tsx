@@ -1,4 +1,4 @@
-import { HeadContent, Outlet, createRootRoute } from "@tanstack/react-router";
+import { createRootRoute, HeadContent, Outlet } from "@tanstack/react-router";
 import Footer from "@/components/Footer.tsx";
 import NavBar from "@/components/NavBar.tsx";
 
