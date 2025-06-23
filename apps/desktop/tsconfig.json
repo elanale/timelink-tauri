@@ -1,3 +1,3 @@
 {
-	"extends": "../../tsconfig.options.json",
+	"extends": "@janfig/tsconfig/react",
 }

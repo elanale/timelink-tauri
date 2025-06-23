@@ -1,4 +1,3 @@
-import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import {
   createUserWithEmailAndPassword,
   sendEmailVerification,
@@ -9,22 +8,52 @@ import { useEffect, useState } from "react";
 import { useAuth } from "@ui/context/AuthContext.tsx";
 import { auth, db } from "@utils/services/firebase.ts";
 
+import { type AnyFieldApi, useForm } from "@tanstack/react-form";
+import { Link, createFileRoute, useNavigate } from "@tanstack/react-router";
+
 export const Route = createFileRoute("/signup")({
   component: Signup,
-	head: () => ({
-		meta: [
-			{
-				title: "Signup - Timelink",
-			},
-			{
-				name: "description",
-				content: "Create a new account on Timelink.",
-			},
-		],
-	}),
+  head: () => ({
+    meta: [
+      {
+        title: "Signup - Timelink",
+      },
+      {
+        name: "description",
+        content: "Create a new account on Timelink.",
+      },
+    ],
+  }),
 });
 
+function FieldInfo({ field }: { field: AnyFieldApi }) {
+  return (
+    <>
+      {field.state.meta.isTouched && !field.state.meta.isValid ? (
+        <p className="mt-1 text-red-600 text-sm">
+          {field.state.meta.errors.map((err) => err.message).join(",")}
+        </p>
+      ) : null}
+      {field.state.meta.isValidating ? "Validating..." : null}
+    </>
+  );
+}
+
 function Signup() {
+  const form = useForm({
+    defaultValues: {
+      name: "",
+      email: "",
+      password: "",
+    },
+    onSubmit: async ({ value }) => {
+      console.log(value);
+    },
+    validators: {
+      onChange: loginSchema,
+    },
+  });
+
   const navigate = useNavigate();
   const { user, loading } = useAuth();
   const [email, setEmail] = useState("");
@@ -75,58 +104,73 @@ function Signup() {
   };
 
   return (
-    <main className="min-h-screen bg-gray-100 dark:bg-gray-900 flex items-center justify-center px-4">
-      <form
-        onSubmit={handleSignup}
-        className="max-w-md w-full bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md space-y-6"
+    <form
+      className="max-w-md w-full bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md space-y-6"
+      onSubmit={(e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        form.handleSubmit();
+      }}
+    >
+      <h1 className="text-3xl font-bold text-center text-gray-900 dark:text-white">
+        Sign Up
+      </h1>
+
+      <input
+        type="text"
+        placeholder="Full Name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        required
+        className="w-full p-2 rounded border dark:bg-gray-700 dark:text-white"
+      />
+      <form.Field name="email">
+        {(field) => (
+          <div>
+            <label className="block mb-1" htmlFor={field.name}>
+              Email
+            </label>
+            <input
+              className="p-2 w-full"
+              id={field.name}
+              name={field.name}
+              onChange={(e) => field.handleChange(e.target.value)}
+              type="email"
+              value={field.state.value}
+            />
+            <FieldInfo field={field} />
+          </div>
+        )}
+      </form.Field>
+
+      <form.Field name="password">
+        {(field) => (
+          <div>
+            <label className="block mb-1" htmlFor={field.name}>
+              Password
+            </label>
+            <input
+              className="w-full p-2 rounded border dark:bg-gray-700 dark:text-white"
+              name={field.name}
+              onChange={(e) => field.handleChange(e.target.value)}
+              type="password"
+              value={field.state.value}
+            />
+            <FieldInfo field={field} />
+          </div>
+        )}
+      </form.Field>
+
+      <button
+        className="cursor-pointer p-4 w-full"
+        onClick={form.handleSubmit}
+        type="submit"
       >
-        <h1 className="text-3xl font-bold text-center text-gray-900 dark:text-white">
-          Create an Account
-        </h1>
-
-        <input
-          type="text"
-          placeholder="Full Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-          className="w-full p-2 rounded border dark:bg-gray-700 dark:text-white"
-        />
-
-        <input
-          type="email"
-          placeholder=".edu Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-          className="w-full p-2 rounded border dark:bg-gray-700 dark:text-white"
-        />
-
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-          className="w-full p-2 rounded border dark:bg-gray-700 dark:text-white"
-        />
-
-        {error && <p className="text-sm text-red-500">{error}</p>}
-
-        <button
-          type="submit"
-          className="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded"
-        >
-          Sign Up
-        </button>
-
-        <p className="text-center text-sm text-gray-600 dark:text-gray-300">
-          Already have an account?{" "}
-          <a href="/login" className="text-blue-600 hover:underline">
-            Log in
-          </a>
-        </p>
-      </form>
-    </main>
+        Sign up
+      </button>
+      <p>
+        Already have an account? <Link to="/login">Log in</Link>
+      </p>
+    </form>
   );
 }

@@ -6,6 +6,7 @@
 	"type": "module",
 	"dependencies": {
 		"@tailwindcss/vite": "catalog:plugins",
+		"@tanstack/react-form": "catalog:",
 		"@tanstack/react-router": "catalog:",
 		"@timelink/ui": "catalog:ui",
 		"@timelink/utils": "catalog:",

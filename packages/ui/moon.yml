@@ -1,2 +1,6 @@
 language: typescript
 type: library
+
+tasks:
+  build:
+    command: tsdown
