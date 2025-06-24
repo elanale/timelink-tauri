@@ -1,6 +1,5 @@
 use tauri::{AppHandle, Manager};
 
-
 pub fn run() {
     tauri::Builder::default()
         #[cfg(desktop)]

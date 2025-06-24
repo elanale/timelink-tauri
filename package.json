@@ -35,7 +35,6 @@
 			"plugins": {
 				"@tailwindcss/vite": "^4.1.10",
 				"@tanstack/router-plugin": "^1.120.10",
-				"@vitejs/plugin-react": "^4.5.2",
 				"vite-plugin-solid": "^2.11.6"
 			},
 			"ui": {

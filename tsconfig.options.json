@@ -1,13 +1,3 @@
 {
 	"extends": "@janfig/tsconfig/solid",
-	"compilerOptions": {
-		"types": ["vite/client"],
-
-		// Path aliases
-		"baseUrl": ".",
-		"paths": {
-			"@timelink/ui/*": ["packages/ui/src/*"],
-			"@timelink/utils/*": ["packages/utils/src/*"]
-		}
-	}
 }

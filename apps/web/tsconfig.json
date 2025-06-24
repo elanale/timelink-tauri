@@ -1,3 +1,13 @@
 {
 	"extends": "../../tsconfig.options.json",
+	"compilerOptions": {
+		"types": [
+			"vite/client"
+		],
+		"baseUrl": ".",
+		"paths": {
+			"@timelink/ui/*": ["../../packages/ui/src/*"],
+			"@timelink/utils/*": ["../../packages/utils/src/*"]
+		}		
+	}
 }
