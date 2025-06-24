@@ -1,11 +1,1 @@
-{
-	"lastHash": "5c59c81694ba3f47b3d27de845dd29438315297af19514e4a6248a0980dd6421",
-	"projects": {
-		"web": { "alias": "timelink-web", "node_index": 0, "source": "apps/web" },
-		"desktop": {
-			"alias": "timelink-desktop",
-			"node_index": 1,
-			"source": "apps/desktop"
-		}
-	}
-}
+{"lastHash":"1fb917dd5b81bbd7ccb239c914a5531112d34f6513cf215f47573adf5ed30103","projects":{"web":{"alias":"timelink-web","node_index":0,"source":"apps/web"},"desktop":{"alias":"timelink-desktop","node_index":1,"source":"apps/desktop"}}}

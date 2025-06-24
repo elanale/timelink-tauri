@@ -1,5 +1,5 @@
-import { useAuth } from "@ui/context/AuthContext.tsx";
-import { db } from "@utils/firebase";
+import { useAuth } from "@timelink/ui/context/AuthContext.tsx";
+import { db } from "@timelink/utils/firebase";
 import {
 	addDoc,
 	collection,

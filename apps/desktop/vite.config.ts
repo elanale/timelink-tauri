@@ -22,8 +22,8 @@ export default defineConfig(async () => ({
 	clearScreen: false,
 	resolve: {
 		alias: {
-			"@ui": resolve(__dirname, "../../packages/ui/src"),
-			"@utils": resolve(__dirname, "../../packages/utils/src"),
+			"@timelink/ui": resolve(__dirname, "../../packages/ui/src"),
+			"@timelink/utils": resolve(__dirname, "../../packages/utils/src"),
 		},
 	},
 	// 2. tauri expects a fixed port, fail if that port is not available
@@ -33,10 +33,10 @@ export default defineConfig(async () => ({
 		host: host || false,
 		hmr: host
 			? {
-					protocol: "ws",
-					host,
-					port: 1421,
-				}
+				protocol: "ws",
+				host,
+				port: 1421,
+			}
 			: undefined,
 		watch: {
 			// 3. tell vite to ignore watching `src-tauri`

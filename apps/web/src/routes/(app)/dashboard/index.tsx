@@ -1,7 +1,7 @@
 import { createFileRoute, useNavigate } from "@tanstack/solid-router";
 import { useEffect } from "react";
-import { useAuth } from "@ui/context/AuthContext";
-import Clock from "@ui/components/Clock.tsx";
+import { useAuth } from "@timelink/ui/context/AuthContext";
+import Clock from "@timelink/ui/components/Clock.tsx";
 
 export const Route = createFileRoute("/dashboard/")({
 	component: Dashboard,

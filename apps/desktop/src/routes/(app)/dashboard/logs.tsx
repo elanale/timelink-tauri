@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { useAuth } from "@ui/context/AuthContext.tsx";
-import { auth } from "@utils/firebase";
+import { useAuth } from "@timelink/ui/context/AuthContext.tsx";
+import { auth } from "@timelink/utils/firebase";
 
 import { Link, createFileRoute, useNavigate } from "@tanstack/solid-router";
 

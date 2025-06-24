@@ -1,8 +1,12 @@
 language: typescript
 type: application
 
+tags: ['tauri', 'vite']
+
 tasks:
   build:
     command: 'tauri dev'
+    outputs:
+      - "dist"
   dev:
     command: 'tauri build'

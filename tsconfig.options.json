@@ -6,8 +6,8 @@
 		// Path aliases
 		"baseUrl": ".",
 		"paths": {
-			"@ui/*": ["packages/ui/src/*"],
-			"@utils/*": ["packages/utils/src/*"]
+			"@timelink/ui/*": ["packages/ui/src/*"],
+			"@timelink/utils/*": ["packages/utils/src/*"]
 		}
 	}
 }

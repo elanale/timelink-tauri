@@ -4,6 +4,10 @@
 	"authors": "",
 	"version": "0.1.0",
 	"type": "module",
+	"exports": {
+		"./components/*.tsx": "./src/components/*.tsx",
+		"./styles/*.css": "./src/styles/*.css"
+	},
 	"devDependencies": {
 		"firebase": "catalog:",
 		"solid-js": "catalog:ui",

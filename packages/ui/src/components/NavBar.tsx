@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "@tanstack/solid-router";
-import { auth } from "@utils/firebase";
+import { auth } from "@timelink/utils/firebase";
 import { signOut } from "firebase/auth";
 import { Show, type Component } from "solid-js";
 import { useAuth } from "../context/AuthContext.tsx";

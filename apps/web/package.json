@@ -14,8 +14,6 @@
 		"@tanstack/solid-form": "catalog:",
 		"@tanstack/solid-router": "catalog:",
 		"@tanstack/solid-table": "catalog:",
-		"@timelink/ui": "catalog:ui",
-		"@timelink/utils": "catalog:",
 		"solid-js": "catalog:ui",
 		"tailwindcss": "catalog:ui"
 	},

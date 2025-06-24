@@ -5,13 +5,13 @@ import {
 } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import { useAuth } from "@ui/context/AuthContext.tsx";
-import { auth, db } from "@utils/firebase";
+import { useAuth } from "@timelink/ui/context/AuthContext.tsx";
+import { auth, db } from "@timelink/utils/firebase";
 
 import { type AnyFieldApi, useForm } from "@tanstack/solid-form";
 import { Link, createFileRoute, useNavigate } from "@tanstack/solid-router";
 
-import { signupSchema } from "@utils/schemas/auth.schema.ts";
+import { signupSchema } from "@timelink/utils/schemas/auth.schema.ts";
 
 export const Route = createFileRoute("/signup")({
 	component: Signup,

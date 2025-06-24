@@ -1,10 +1,10 @@
 language: typescript
 type: application
 
+tags: ['vite']
+
 tasks:
-  build:
-    command: 'vite build'
   dev:
-    command: 'vite'
+    command: "vite"
   preview:
-    command: 'vite preview'
+    command: "vite preview"

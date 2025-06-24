@@ -1,6 +1,6 @@
 import { RouterProvider, createRouter } from "@tanstack/solid-router";
-import AuthProvider from "@ui/context/AuthContext.tsx";
-import "@ui/styles.css";
+import AuthProvider from "@timelink/ui/context/AuthContext.tsx";
+import "@timelink/ui/styles.css";
 /* @refresh reload */
 import { render } from "solid-js/web";
 import { routeTree } from "./routeTree.gen.ts";

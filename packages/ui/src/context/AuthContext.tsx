@@ -6,7 +6,7 @@ import {
 	createSignal,
 	useContext,
 } from "solid-js";
-import { auth } from "@utils/firebase";
+import { auth } from "@timelink/utils/firebase";
 
 interface AuthState {
 	user: User | null;

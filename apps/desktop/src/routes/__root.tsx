@@ -3,7 +3,7 @@ import {
 	HeadContent,
 	Outlet,
 } from "@tanstack/solid-router";
-import { Footer, NavBar } from "@ui/components";
+import { Footer, NavBar } from "@timelink/ui/components";
 
 interface RouterContext {
 	auth: AuthContext;

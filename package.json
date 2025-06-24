@@ -19,14 +19,13 @@
 	],
 	"workspaces": {
 		"packages": [
-			"packages/*",
-			"apps/*"
+			"apps/*",
+			"packages/*"
 		],
 		"catalog": {
 			"@tanstack/solid-form": "^1.12.3",
 			"@tanstack/solid-router": "^1.121.34",
 			"@tanstack/solid-table": "^8.21.3",
-			"@timelink/utils": "workspace:*",
 			"firebase": "^11.9.1"
 		},
 		"catalogs": {
@@ -40,7 +39,6 @@
 				"vite-plugin-solid": "^2.11.6"
 			},
 			"ui": {
-				"@timelink/ui": "workspace:*",
 				"solid-js": "^1.9.5",
 				"tailwindcss": "^4.1.7"
 			}

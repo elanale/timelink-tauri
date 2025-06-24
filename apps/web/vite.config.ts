@@ -14,8 +14,8 @@ export default defineConfig({
 	],
 	resolve: {
 		alias: {
-			"@ui": resolve(__dirname, "../../packages/ui/src"),
-			"@utils": resolve(__dirname, "../../packages/utils/src"),
+			"@timelink/ui": resolve(__dirname, "../../packages/ui/src"),
+			"@timelink/utils": resolve(__dirname, "../../packages/utils/src"),
 		},
 	},
 	server: {
