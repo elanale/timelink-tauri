@@ -1,12 +1,12 @@
 {
-    "name": "@timelink/ui",
-    "description": "",
-    "authors": "",
-    "version": "0.1.0",
-    "type": "module",
-    "devDependencies": {
-        "firebase": "catalog:",
-        "react": "catalog:",
-        "tailwindcss": "catalog:ui"
-    }
+	"name": "@timelink/ui",
+	"description": "",
+	"authors": "",
+	"version": "0.1.0",
+	"type": "module",
+	"devDependencies": {
+		"firebase": "catalog:",
+		"solid-js": "catalog:ui",
+		"tailwindcss": "catalog:ui"
+	}
 }

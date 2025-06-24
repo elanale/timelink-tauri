@@ -12,20 +12,21 @@
 	},
 	"dependencies": {
 		"@tailwindcss/vite": "catalog:plugins",
-		"@tanstack/react-form": "catalog:",
-		"@tanstack/react-router": "catalog:",
+		"@tanstack/solid-form": "catalog:",
+		"@tanstack/solid-router": "catalog:",
+		"@tanstack/solid-table": "catalog:",
 		"@tauri-apps/api": "^2.5.0",
-		"@tauri-apps/plugin-opener": "^2.3.0",
+		"@tauri-apps/plugin-notification": "^2.2.3",
+		"@tauri-apps/plugin-updater": "^2.8.1",
 		"@timelink/ui": "catalog:ui",
 		"@timelink/utils": "catalog:",
-		"react": "catalog:",
-		"react-dom": "catalog:",
+		"solid-js": "catalog:ui",
 		"tailwindcss": "catalog:ui"
 	},
 	"devDependencies": {
 		"@tanstack/router-plugin": "catalog:plugins",
 		"@tauri-apps/cli": "^2.5.0",
-		"@vitejs/plugin-react": "catalog:plugins",
-		"vite": "catalog:build"
+		"vite": "catalog:build",
+		"vite-plugin-solid": "catalog:plugins"
 	}
 }

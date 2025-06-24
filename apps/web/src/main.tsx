@@ -1,36 +1,35 @@
-import { createRouter, RouterProvider } from "@tanstack/react-router";
-import { StrictMode } from "react";
-import ReactDOM from "react-dom/client";
+import { RouterProvider, createRouter } from "@tanstack/solid-router";
 import AuthProvider from "@ui/context/AuthContext.tsx";
+import "@ui/styles.css";
+/* @refresh reload */
+import { render } from "solid-js/web";
 import { routeTree } from "./routeTree.gen.ts";
 
-import "@ui/styles.css";
-
-// Create the router
 const router = createRouter({
-  routeTree,
-  context: {},
-  defaultPreload: "intent",
-  scrollRestoration: true,
-  defaultStructuralSharing: true,
-  defaultPreloadStaleTime: 0,
+	routeTree,
+	defaultPreload: "intent",
+	scrollRestoration: true,
+	defaultPreloadStaleTime: 0,
+  context: {
+    auth: 
+  }
 });
 
-// Register the router type
-declare module "@tanstack/react-router" {
-  interface Register {
-    router: typeof router;
-  }
+declare module "@tanstack/solid-router" {
+	interface Register {
+		router: typeof router;
+	}
+}
+
+function App() {
+	return (
+		<AuthProvider>
+			<RouterProvider context={{ auth }} router={router} />
+		</AuthProvider>
+	);
 }
 
 const rootElement = document.getElementById("app");
 if (rootElement) {
-  const root = ReactDOM.createRoot(rootElement);
-  root.render(
-    <StrictMode>
-      <AuthProvider>
-        <RouterProvider router={router} />
-      </AuthProvider>
-    </StrictMode>
-  );
+	render(() => <App />, rootElement);
 }

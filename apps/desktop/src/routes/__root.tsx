@@ -1,7 +1,15 @@
-import { createRootRoute, HeadContent, Outlet } from "@tanstack/react-router";
+import {
+	createRootRouteWithContext,
+	HeadContent,
+	Outlet,
+} from "@tanstack/solid-router";
 import { Footer, NavBar } from "@ui/components";
 
-export const Route = createRootRoute({
+interface RouterContext {
+	auth: AuthContext;
+}
+
+export const Route = createRootRouteWithContext<RouterContext>()({
 	component: Root,
 });
 

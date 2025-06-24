@@ -1,51 +1,49 @@
 {
-    "name": "timelink-root",
-    "description": "",
-    "private": "true",
-    "scripts": {
-        "check": "biome check --write .",
-        "format": "biome format --write .",
-        "lint": "biome lint --write ."
-    },
-    "devDependencies": {
-        "@biomejs/biome": "^2.0.5",
-        "@janfig/tsconfig": "^0.1.1",
-        "@moonrepo/cli": "^1.37.3",
-        "@types/bun": "^1.2.17",
-        "@types/react": "^19.1.8",
-        "@types/react-dom": "^19.1.6",
-        "typescript": "^5.8.3"
-    },
-    "trustedDependencies": [
-        "@moonrepo/cli"
-    ],
-    "workspaces": {
-        "packages": [
-            "packages/*",
-            "apps/*"
-        ],
-        "catalog": {
-            "@tanstack/react-form": "^1.12.3",
-            "@tanstack/react-router": "^1.121.21",
-            "@timelink/utils": "workspace:*",
-            "firebase": "^11.9.1",
-            "react": "^19.1.0",
-            "react-dom": "^19.1.0"
-        },
-        "catalogs": {
-            "build": {
-                "tsdown": "^0.11.5",
-                "vite": "^6.3.5"
-            },
-            "plugins": {
-                "@tailwindcss/vite": "^4.1.10",
-                "@tanstack/router-plugin": "^1.120.10",
-                "@vitejs/plugin-react": "^4.5.2"
-            },
-            "ui": {
-                "@timelink/ui": "workspace:*",
-                "tailwindcss": "^4.1.7"
-            }
-        }
-    }
+	"name": "timelink-root",
+	"description": "",
+	"private": "true",
+	"scripts": {
+		"check": "biome check --write .",
+		"format": "biome format --write .",
+		"lint": "biome lint --write ."
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.0.5",
+		"@janfig/tsconfig": "^0.1.1",
+		"@moonrepo/cli": "^1.37.3",
+		"@types/bun": "^1.2.17",
+		"typescript": "^5.8.3"
+	},
+	"trustedDependencies": [
+		"@moonrepo/cli"
+	],
+	"workspaces": {
+		"packages": [
+			"packages/*",
+			"apps/*"
+		],
+		"catalog": {
+			"@tanstack/solid-form": "^1.12.3",
+			"@tanstack/solid-router": "^1.121.34",
+			"@tanstack/solid-table": "^8.21.3",
+			"@timelink/utils": "workspace:*",
+			"firebase": "^11.9.1"
+		},
+		"catalogs": {
+			"build": {
+				"vite": "^6.3.5"
+			},
+			"plugins": {
+				"@tailwindcss/vite": "^4.1.10",
+				"@tanstack/router-plugin": "^1.120.10",
+				"@vitejs/plugin-react": "^4.5.2",
+				"vite-plugin-solid": "^2.11.6"
+			},
+			"ui": {
+				"@timelink/ui": "workspace:*",
+				"solid-js": "^1.9.5",
+				"tailwindcss": "^4.1.7"
+			}
+		}
+	}
 }

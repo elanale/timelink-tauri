@@ -1,11 +1,11 @@
 {
-    "name": "@timelink/utils",
-    "description": "",
-    "authors": "",
-    "version": "0.1.0",
-    "type": "module",
-    "dependencies": {
-        "firebase": "catalog:",
-        "zod": "^3.25.67"
-    }
+	"name": "@timelink/utils",
+	"description": "",
+	"authors": "",
+	"version": "0.1.0",
+	"type": "module",
+	"dependencies": {
+		"firebase": "catalog:",
+		"zod": "^3.25.67"
+	}
 }

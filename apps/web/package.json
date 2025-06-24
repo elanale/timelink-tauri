@@ -4,19 +4,24 @@
 	"author": "Elan Wygodski",
 	"private": false,
 	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"preview": "vite preview"
+	},
 	"dependencies": {
 		"@tailwindcss/vite": "catalog:plugins",
-		"@tanstack/react-form": "catalog:",
-		"@tanstack/react-router": "catalog:",
+		"@tanstack/solid-form": "catalog:",
+		"@tanstack/solid-router": "catalog:",
+		"@tanstack/solid-table": "catalog:",
 		"@timelink/ui": "catalog:ui",
 		"@timelink/utils": "catalog:",
-		"react": "catalog:",
-		"react-dom": "catalog:",
+		"solid-js": "catalog:ui",
 		"tailwindcss": "catalog:ui"
 	},
 	"devDependencies": {
 		"@tanstack/router-plugin": "catalog:plugins",
-		"@vitejs/plugin-react": "catalog:plugins",
-		"vite": "catalog:build"
+		"vite": "catalog:build",
+		"vite-plugin-solid": "catalog:plugins"
 	}
 }
