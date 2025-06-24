@@ -36,9 +36,7 @@
 	"plugins": {
 		"updater": {
 			"pubkey": "",
-			"endpoints": [
-				""
-			]
+			"endpoints": [""]
 		}
 	}
 }

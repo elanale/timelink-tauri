@@ -1,6 +1,11 @@
 import type { User } from "firebase/auth";
 import { onAuthStateChanged } from "firebase/auth";
-import { createContext, createEffect, createSignal, useContext } from "solid-js";
+import {
+	createContext,
+	createEffect,
+	createSignal,
+	useContext,
+} from "solid-js";
 import { auth } from "@utils/firebase";
 
 interface AuthState {

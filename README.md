@@ -8,9 +8,9 @@ Below is the core technology stack used in TimeLink, along with links to their d
 
 - [Bun](https://bun.sh/docs) - Fast JavaScript runtime and package manager
 - [Moon](https://moonrepo.dev/docs/install) - Monorepo management, organization, orchestration, and notification tool for the web ecosystem
-- [React](https://react.dev/) - UI library
+- [Solid](https://solidjs.com/) - UI library
 - [Tailwind CSS](https://tailwindcss.com/docs/installation/using-vite) - CSS Framework
-- [Tanstack Router](https://tanstack.com/router/latest/docs/framework/react/overview)
+- [Tanstack Router](https://tanstack.com/router/latest/docs/framework/solid/overview)
 - [Tauri](https://tauri.app/start/) - Native desktop app runtime using Rust
 - [TypeScript](https://www.typescriptlang.org/docs/)
 - [Vite](https://vite.dev/guide/)
@@ -71,7 +71,7 @@ moon desktop:dev
 #### Web App
 
 ```bash
-# Start the Vite-powered React frontend in your browser
+# Start the Vite-powered Solid frontend in your browser
 moon web:dev
 
 # Build the app

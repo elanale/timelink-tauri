@@ -8,13 +8,14 @@ import {
 	Timestamp,
 	updateDoc,
 } from "firebase/firestore";
+import { createEffect, createSignal, type Component } from "solid-js";
 
 const Clock: Component = () => {
 	const { user } = useAuth();
 	const [clockInTime, setClockInTime] = useState<string | null>(null);
 	const [clockOutTime, setClockOutTime] = useState<string | null>(null);
 	const [status, setStatus] = useState<"idle" | "in" | "out">("idle");
-	const [logs, setLogs] = useState<any[]>([]);
+	const [logs, setLogs] = createSignal<any[]>([]);
 	const [totalHours, setTotalHours] = useState(0);
 
 	const handleClockIn = async () => {
@@ -96,7 +97,7 @@ const Clock: Component = () => {
 		setTotalHours(total);
 	};
 
-	useEffect(() => {
+	createEffect(() => {
 		if (user) fetchLogs();
 	}, [user]);
 
