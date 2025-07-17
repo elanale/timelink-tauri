@@ -1,3 +1,8 @@
+import { type AnyFieldApi, useForm } from "@tanstack/solid-form";
+import { createFileRoute, Link, useNavigate } from "@tanstack/solid-router";
+import { useAuth } from "@timelink/ui/context/AuthContext.tsx";
+import { auth, db } from "@timelink/utils/firebase";
+import { signupSchema } from "@timelink/utils/schemas/auth.schema.ts";
 import {
 	createUserWithEmailAndPassword,
 	sendEmailVerification,
@@ -5,13 +10,6 @@ import {
 } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import { useAuth } from "@timelink/ui/context/AuthContext.tsx";
-import { auth, db } from "@timelink/utils/firebase";
-
-import { type AnyFieldApi, useForm } from "@tanstack/solid-form";
-import { Link, createFileRoute, useNavigate } from "@tanstack/solid-router";
-
-import { signupSchema } from "@timelink/utils/schemas/auth.schema.ts";
 
 export const Route = createFileRoute("/signup")({
 	component: Signup,

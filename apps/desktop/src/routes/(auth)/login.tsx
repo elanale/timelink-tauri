@@ -1,12 +1,10 @@
-import { signInWithEmailAndPassword, signOut } from "firebase/auth";
-import { useEffect, useState } from "react";
+import { type AnyFieldApi, useForm } from "@tanstack/solid-form";
+import { createFileRoute, Link, useNavigate } from "@tanstack/solid-router";
 import { useAuth } from "@timelink/ui/context/AuthContext.tsx";
 import { auth } from "@timelink/utils/firebase";
-
-import { type AnyFieldApi, useForm } from "@tanstack/solid-form";
-import { Link, createFileRoute, useNavigate } from "@tanstack/solid-router";
-
 import { loginSchema } from "@timelink/utils/schemas/auth.schema.ts";
+import { signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { useEffect, useState } from "react";
 
 export const Route = createFileRoute("/login")({
 	component: Login,

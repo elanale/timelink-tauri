@@ -1,8 +1,7 @@
-import { useEffect, useState } from "react";
+import { createFileRoute, Link, useNavigate } from "@tanstack/solid-router";
 import { useAuth } from "@timelink/ui/context/AuthContext.tsx";
 import { auth } from "@timelink/utils/firebase";
-
-import { Link, createFileRoute, useNavigate } from "@tanstack/solid-router";
+import { useEffect, useState } from "react";
 
 export const Route = createFileRoute("/logs")({
 	component: Logs,

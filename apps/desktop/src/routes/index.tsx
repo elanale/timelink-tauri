@@ -1,4 +1,4 @@
-import { Link, createFileRoute } from "@tanstack/solid-router";
+import { createFileRoute, Link } from "@tanstack/solid-router";
 import { invoke } from "@tauri-apps/api/core";
 import { useState } from "react";
 

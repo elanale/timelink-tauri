@@ -1,4 +1,4 @@
-import { RouterProvider, createRouter } from "@tanstack/solid-router";
+import { createRouter, RouterProvider } from "@tanstack/solid-router";
 import AuthProvider from "@timelink/ui/context/AuthContext.tsx";
 import "@timelink/ui/styles.css";
 /* @refresh reload */
